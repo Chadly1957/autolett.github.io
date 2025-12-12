@@ -36,12 +36,14 @@
         }
 
         .logo img {
-    /* Sets the height based on 10% of the parent element's height */
-    height: 15%; 
-    /* Allows the width to scale proportionally with the height */
-    width: auto; 
-    /* Ensures the image is never bigger than its natural size */
-    max-width: 50%; 
+            height: 40px;
+            width: auto;
+        }
+
+        @media (max-width: 968px) {
+            .logo img {
+                height: 32px;
+            }
         }
 
         .nav-cta {
@@ -131,8 +133,12 @@
             margin-top: 3rem;
             background: white;
             border-radius: 12px 12px 0 0;
-            padding: 1.5rem;
             box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-visual img {
+            display: block;
+            border-radius: 12px 12px 0 0;
         }
 
         .dashboard-mockup {
@@ -358,9 +364,15 @@
         }
 
         .footer-logo img {
-            height: 28px;
+            height: 36px;
             width: auto;
             filter: brightness(0) invert(1);
+        }
+
+        @media (max-width: 968px) {
+            .footer-logo img {
+                height: 28px;
+            }
         }
 
         .footer-links {
