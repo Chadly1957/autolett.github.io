@@ -85,13 +85,30 @@
             background: 
                 linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.05) 50%, transparent 100%);
             pointer-events: none;
+            z-index: 2; /* Existing overlay should be on top of the arrow but behind content */
         }
+        
+        /* NEW: Style for the background arrow */
+        .hero-arrow {
+            position: absolute;
+            bottom: -5%; /* Adjusted for visual placement */
+            left: -10%; /* Starts outside the viewport slightly */
+            width: 80vw; /* Use a large width relative to viewport */
+            height: auto;
+            max-width: 1200px;
+            pointer-events: none;
+            z-index: 1; /* Behind the content (z-index: 1) but above the background (no z-index/0) */
+            opacity: 0.7; /* Make it subtle */
+            transform: rotate(-5deg); /* Slight rotation for dynamic look */
+        }
+        /* End NEW Styles */
+
 
         .hero-content {
             max-width: 1200px;
             margin: 0 auto;
             position: relative;
-            z-index: 1;
+            z-index: 5; /* Ensure content is above the arrow and background effects */
         }
 
         .hero h1 {
@@ -101,6 +118,7 @@
             margin-bottom: 1rem;
             font-style: italic;
         }
+        /* ... rest of .hero styles ... */
 
         .hero-subtitle {
             font-size: 1.125rem;
@@ -158,6 +176,7 @@
             padding: 6rem 3rem;
             background: white;
         }
+        /* ... rest of the styles (Features, How It Works, FAQ, Waitlist, Footer, Responsive, Modal) ... */
 
         .section-title {
             text-align: center;
@@ -452,10 +471,14 @@
                 flex-direction: column;
                 gap: 1rem;
             }
+            
+            /* Hide the arrow on very small screens if it causes layout issues */
+            .hero-arrow {
+                display: none;
+            }
         }
 
-        /* * NEW: Modal Styles for Mailchimp form 
-        */
+        /* Modal Styles (from previous response) */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -482,7 +505,7 @@
             padding: 2rem;
             border-radius: 12px;
             position: relative;
-            max-width: 500px; /* Adjusted from your original 600px width */
+            max-width: 500px; 
             width: 90%;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transform: scale(0.95);
@@ -510,7 +533,7 @@
             background: #fff;
             clear: left;
             font: 14px Helvetica, Arial, sans-serif;
-            width: 100%; /* Make it responsive inside the modal */
+            width: 100%; 
         }
         #mc_embed_signup .mc-field-group {
             padding-bottom: 1.25rem;
@@ -533,7 +556,7 @@
             display: block;
             width: 100%;
             padding: 0.875rem 2rem;
-            background: #4a6fa5; /* Use your brand color */
+            background: #4a6fa5; 
             color: white;
             border: none;
             border-radius: 25px;
@@ -561,6 +584,8 @@
     </nav>
 
     <section class="hero">
+        <img src="arrow.png" alt="Abstract background arrow" class="hero-arrow">
+
         <div class="hero-content">
             <h1>Your Newsletter, on<br>Autopilot.</h1>
             <p class="hero-subtitle">Beautiful, curated newsletters from any website—no RSS required. Add sources. Design once. Send forever.</p>
@@ -742,9 +767,7 @@
                     </form>
                     <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
                     <script type="text/javascript">
-                        // Your existing Mailchimp validation script (truncated)
                         (function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[6]='COMPANY';ftypes[6]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);
-                        // ... The rest of the Mailchimp script is omitted for brevity, but should be included in your final code. 
                     </script>
                 </div>
             </div>
@@ -755,33 +778,27 @@
         const openButtons = document.querySelectorAll('.open-modal');
         const closeButton = document.getElementById('closeModal');
 
-        // Function to open the modal
         function openModal(event) {
-            event.preventDefault(); // Stop the default anchor link action
+            event.preventDefault(); 
             modal.classList.add('open');
         }
 
-        // Function to close the modal
         function closeModal() {
             modal.classList.remove('open');
         }
 
-        // Event listeners for opening
         openButtons.forEach(button => {
             button.addEventListener('click', openModal);
         });
 
-        // Event listener for closing via the X button
         closeButton.addEventListener('click', closeModal);
 
-        // Event listener for closing by clicking outside the modal
         modal.addEventListener('click', (event) => {
             if (event.target === modal) {
                 closeModal();
             }
         });
 
-        // Event listener for closing with the Escape key
         document.addEventListener('keydown', (event) => {
             if (event.key === 'Escape' && modal.classList.contains('open')) {
                 closeModal();
