@@ -453,23 +453,118 @@
                 gap: 1rem;
             }
         }
+
+        /* * NEW: Modal Styles for Mailchimp form 
+        */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+
+        .modal-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            position: relative;
+            max-width: 500px; /* Adjusted from your original 600px width */
+            width: 90%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transform: scale(0.95);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .modal-overlay.open .modal-content {
+            transform: scale(1);
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #1a1a1a;
+            line-height: 1;
+        }
+        
+        /* Mailchimp Form Overrides (Simplified) */
+        #mc_embed_signup {
+            background: #fff;
+            clear: left;
+            font: 14px Helvetica, Arial, sans-serif;
+            width: 100%; /* Make it responsive inside the modal */
+        }
+        #mc_embed_signup .mc-field-group {
+            padding-bottom: 1.25rem;
+        }
+        #mc_embed_signup h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #4a6fa5;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        #mc_embed_signup input[type="email"], 
+        #mc_embed_signup input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        #mc_embed_signup .button {
+            display: block;
+            width: 100%;
+            padding: 0.875rem 2rem;
+            background: #4a6fa5; /* Use your brand color */
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+            text-shadow: none;
+        }
+        #mc_embed_signup .button:hover {
+            background: #2c4875;
+        }
+        #mc_embed_signup .clear.foot {
+            text-align: center;
+            margin-top: 1rem;
+        }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
         <div class="logo">
             <img src="logo.png" alt="Autolett">
         </div>
-        <a href="#" class="nav-cta">Join The Waitlist</a>
+        <a href="#" class="nav-cta open-modal">Join The Waitlist</a>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>Your Newsletter, on<br>Autopilot.</h1>
             <p class="hero-subtitle">Beautiful, curated newsletters from any website—no RSS required. Add sources. Design once. Send forever.</p>
-            <a href="#" class="btn-primary">Join The Waitlist</a>
+            <a href="#" class="btn-primary open-modal">Join The Waitlist</a>
             
             <div class="hero-visual">
                 <img src="dashboard.png" alt="Autolett Dashboard" style="width: 100%; height: auto; border-radius: 8px;">
@@ -477,7 +572,6 @@
         </div>
     </section>
 
-    <!-- Features Section -->
     <section class="features">
         <h2 class="section-title">Everything You Need to Create Amazing<br>Newsletters</h2>
         
@@ -520,7 +614,6 @@
         </div>
     </section>
 
-    <!-- How It Works Section -->
     <section class="how-it-works">
         <div class="steps-container">
             <h2 class="section-title">From Setup to Send in Seconds</h2>
@@ -552,12 +645,11 @@
             </div>
 
             <div class="how-it-works-cta">
-                <a href="#" class="btn-primary">Join The Waitlist</a>
+                <a href="#" class="btn-primary open-modal">Join The Waitlist</a>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
     <section class="faq">
         <div class="faq-container">
             <h2 class="section-title">Frequently Asked Questions</h2>
@@ -594,16 +686,14 @@
         </div>
     </section>
 
-    <!-- Waitlist Section -->
     <section class="waitlist">
         <div class="waitlist-content">
             <div class="waitlist-badge">Launching soon!</div>
             <h2>Join The Waitlist To Be Notified When Autolett Is Available</h2>
-            <a href="#" class="btn-primary">Join The Waitlist</a>
+            <a href="#" class="btn-primary open-modal">Join The Waitlist</a>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
@@ -621,5 +711,83 @@
             </div>
         </div>
     </footer>
+
+    <div id="waitlistModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-button" id="closeModal">&times;</button>
+            <div id="mc_embed_shell">
+                <div id="mc_embed_signup">
+                    <form action="https://autolett.us9.list-manage.com/subscribe/post?u=f9f8fa613a9353b0e91062ead&amp;id=0ffe0a48b8&amp;f_id=001277e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                        <div id="mc_embed_signup_scroll">
+                            <h2>Join the Waitlist</h2>
+                            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+                            <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""></div>
+                            <div class="mc-field-group"><label for="mce-FNAME">First Name </label><input type="text" name="FNAME" class=" text" id="mce-FNAME" value=""></div>
+                            <div class="mc-field-group"><label for="mce-LNAME">Last Name </label><input type="text" name="LNAME" class=" text" id="mce-LNAME" value=""></div>
+                            <div class="mc-field-group"><label for="mce-COMPANY">Company </label><input type="text" name="COMPANY" class=" text" id="mce-COMPANY" value=""></div>
+                            <div id="mce-responses" class="clear foot">
+                                <div class="response" id="mce-error-response" style="display: none;"></div>
+                                <div class="response" id="mce-success-response" style="display: none;"></div>
+                            </div>
+                            <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                                <input type="text" name="b_f9f8fa613a9353b0e91062ead_0ffe0a48b8" tabindex="-1" value="">
+                            </div>
+                            <div class="optionalParent">
+                                <div class="clear foot">
+                                    <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Join Waitlist">
+                                    <p style="margin: 0px auto;"><a href="http://eepurl.com/juqRHM" title="Mailchimp - email marketing made easy and fun"><span style="display: inline-block; background-color: transparent; border-radius: 4px;"><img class="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp" style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+                    <script type="text/javascript">
+                        // Your existing Mailchimp validation script (truncated)
+                        (function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[6]='COMPANY';ftypes[6]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);
+                        // ... The rest of the Mailchimp script is omitted for brevity, but should be included in your final code. 
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const modal = document.getElementById('waitlistModal');
+        const openButtons = document.querySelectorAll('.open-modal');
+        const closeButton = document.getElementById('closeModal');
+
+        // Function to open the modal
+        function openModal(event) {
+            event.preventDefault(); // Stop the default anchor link action
+            modal.classList.add('open');
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            modal.classList.remove('open');
+        }
+
+        // Event listeners for opening
+        openButtons.forEach(button => {
+            button.addEventListener('click', openModal);
+        });
+
+        // Event listener for closing via the X button
+        closeButton.addEventListener('click', closeModal);
+
+        // Event listener for closing by clicking outside the modal
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Event listener for closing with the Escape key
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && modal.classList.contains('open')) {
+                closeModal();
+            }
+        });
+    </script>
+
 </body>
 </html>
