@@ -576,13 +576,16 @@
     </style>
 </head>
 <body>
-    <nav>
-        <div class="logo">
-            <img src="logo.png" alt="Autolett">
-        </div>
-        <a href="/blog/" style="color: white; text-decoration: none; margin-right: 2rem; font-weight: 500; opacity: 0.9;">Blog</a>
+<nav style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem; position: absolute; top: 0; width: 100%; z-index: 100;">
+    <div class="logo">
+        <a href="/"><img src="logo.png" alt="Autolett" style="height: 50px; width: auto;"></a>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 2rem;">
+        <a href="/blog/" style="color: white; text-decoration: none; font-weight: 500; opacity: 0.9; font-size: 1rem;">Blog</a>
         <a href="#" class="nav-cta open-modal">Join The Waitlist</a>
-    </nav>
+    </div>
+</nav>
 
     <section class="hero">
         <img src="arrow.png" alt="Abstract background arrow" class="hero-arrow">
