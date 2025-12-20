@@ -1,0 +1,14 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Autolett Blog",
+    "description": "",
+    "home_page_url": "https://autolett.com/blog",
+    "feed_url": "https://autolett.com/blog/feed.json",
+    "user_comment": "",
+    "icon": "https://autolett.com/blog/media/website/Autolett-Logos-Blue.png",
+    "author": {
+        "name": "Chad Williams"
+    },
+    "items": [
+    ]
+}

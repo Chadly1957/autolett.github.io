@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://autolett.com/blog/sitemap.xml
