@@ -3,39 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Post - Autolett</title>
+    <title>How to Automate Your Newsletter In 5 Minutes | Autolett Blog</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.8; color: #1a1a1a; margin: 0; }
-        nav { background: #4a6fa5; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .container { max-width: 700px; margin: 4rem auto; padding: 0 2rem; }
-        h1 { font-size: 2.5rem; line-height: 1.2; color: #4a6fa5; }
-        .meta { color: #666; margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem; }
-        img { width: 100%; border-radius: 8px; margin: 2rem 0; }
-        .cta-box { background: #f4f7fa; padding: 2rem; border-radius: 12px; margin-top: 4rem; text-align: center; }
-        .btn { background: #4a6fa5; color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 25px; display: inline-block; margin-top: 1rem; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.8; color: #1a1a1a; margin: 0; }
+        /* Simple Blue Nav to match your brand */
+        nav { background: #4a6fa5; padding: 1.2rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { color: white; text-decoration: none; font-weight: bold; font-size: 1.4rem; }
+        .nav-back { color: white; text-decoration: none; font-size: 0.9rem; opacity: 0.9; }
+        
+        .container { max-width: 750px; margin: 4rem auto; padding: 0 2rem; }
+        h1 { font-size: 3rem; line-height: 1.1; color: #1a1a1a; margin-bottom: 1rem; font-style: italic; }
+        h2 { font-size: 1.8rem; color: #4a6fa5; margin-top: 2.5rem; }
+        .meta { color: #666; margin-bottom: 3rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+        
+        p { margin-bottom: 1.5rem; font-size: 1.1rem; }
+        .intro-lead { font-size: 1.3rem; color: #4b5563; line-height: 1.6; }
+        
+        .cta-box { background: #f4f7fa; padding: 3rem; border-radius: 16px; margin-top: 5rem; text-align: center; border: 1px solid #e1e8f0; }
+        .cta-box h3 { margin-top: 0; font-size: 1.8rem; }
+        .btn { background: #4a6fa5; color: white; padding: 1rem 2.5rem; text-decoration: none; border-radius: 30px; display: inline-block; font-weight: 600; margin-top: 1.5rem; transition: transform 0.2s; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(74, 111, 165, 0.3); }
+        
+        img { width: 100%; border-radius: 12px; margin: 2rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .container { margin: 2rem auto; }
+        }
     </style>
 </head>
 <body>
+
     <nav>
-        <a href="/"><img src="/logo.png" alt="Autolett" height="30"></a>
-        <a href="/blog" style="color: white; text-decoration: none;">← All Posts</a>
+        <a href="/" class="nav-logo">Autolett</a>
+        <a href="/blog/" class="nav-back">← Back to Blog</a>
     </nav>
 
     <article class="container">
-        <div class="meta">Published on October 24, 2025</div>
-        <h1>Your Blog Post Title Goes Here</h1>
-        
-        <p>Start writing your content here. It's just regular text wrapped in "p" tags.</p>
-        
-        <p>You can add images easily:</p>
-        <img src="/blog-image-1.png" alt="Description">
+        <header>
+            <div class="meta">Strategy • 5 Minute Read</div>
+            <h1>How to Automate Your Newsletter In 5 Minutes</h1>
+            <p class="intro-lead">Newsletters are fantastic for your business. They help you stay top-of-mind with your audience in the most sacred place in someone's life—their inbox.</p>
+        </header>
 
-        <p>Everything is under your control. No plugins to break, no software to update.</p>
+        <section>
+            <p>But producing a newsletter every month, week, or day can take hours and a considerable amount of manpower. From finding articles that are relevant for your audience and timely enough for your newsletter to manually grabbing the titles, dates, links, images, and the article body.</p>
+
+            <p>Autolett was created to make this process a thing of the past. Here is how to get started producing an engaging newsletter in just minutes.</p>
+
+            <h2>Step 1: Get Connected</h2>
+            <p>Before you start automating, you simply connect your favorite email platform. Whether you use Mailchimp, Constant Contact, or MailerLite, Autolett bridges the gap between your content and your subscribers.</p>
+
+            <h2>Step 2: The Sources</h2>
+            <p>An engaging and on-topic newsletter starts with the sources that you pull from. With Autolett, all you have to do is <strong>grab the URL</strong> where articles or blog posts are published. </p>
+            
+            <p>In your Sources tab, you can save this as a permanent feed. You can use almost any website for this without having to hunt for an elusive RSS feed. That is the power of our custom scraping engine in action—it finds the content so you don't have to.</p>
+
+            <h2>Step 3: Build Your Template</h2>
+            <p>This is where your newsletter becomes truly yours. Our template editor is robust enough to recreate any design you currently use. However, the "secret sauce" is the <strong>Magical Dynamic Post Block</strong>.</p>
+            
+            <p>Wherever you place this block in your template is where the articles from your sources will automatically populate. You design the layout once, and Autolett fills it with fresh content every single time.</p>
+
+           <h2>Step 4: The Fetch Button</h2>
+            <p>Once your sources are set and your template is designed, you're ready for the magic. Clicking the <strong>"Fetch"</strong> button tells Autolett to scour your chosen websites for the most recent articles published.</p>
+            
+            <p>Within seconds, you’ll see a list of the latest content. You have total control here: simply select exactly which articles you want to include in your current newsletter, and Autolett will instantly populate your template with the correct titles, images, and links.</p>
+            
+            <p>Prefer a hands-off approach? You can also fully automate this selection process based on your preferences—but we’ll dive deep into that "Set it and Forget it" workflow in a future blog post!</p>
+        </section>
 
         <div class="cta-box">
-            <h3>Ready to put your newsletter on autopilot?</h3>
-            <a href="/" class="btn">Join the Waitlist</a>
+            <h3>Stop Manually Copy-Pasting</h3>
+            <p>Join the waitlist today and be the first to experience true newsletter automation.</p>
+            <a href="/" class="btn">Join The Waitlist</a>
         </div>
     </article>
+
 </body>
 </html>
