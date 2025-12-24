@@ -416,10 +416,25 @@
             font-size: 0.875rem;
         }
 
-        /* Responsive */
+        /* Updated Responsive Navigation */
         @media (max-width: 968px) {
             nav {
-                padding: 1.5rem 2rem;
+                padding: 1rem 1.5rem; /* Less padding on sides */
+            }
+
+            .logo img {
+                height: 35px; /* Smaller logo to save space */
+            }
+
+            /* This targets the container holding Blog and the Button */
+            nav div[style*="margin-left: auto"] {
+                gap: 1rem !important; /* Reduce gap between Blog and Button */
+            }
+
+            .nav-cta {
+                padding: 0.5rem 1rem; /* Smaller button padding */
+                font-size: 0.85rem; /* Smaller font size */
+                white-space: nowrap; /* FORCES the button to stay on one line */
             }
 
             .hero {
@@ -462,15 +477,18 @@
             }
         }
 
-        @media (max-width: 640px) {
-            .steps {
-                grid-template-columns: 1fr;
+        @media (max-width: 480px) {
+            nav {
+                padding: 1rem 1rem;
             }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 1rem;
+            .nav-cta {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.75rem;
             }
+            nav div[style*="margin-left: auto"] {
+                gap: 0.75rem !important;
+            }
+        }
             
             /* Hide the arrow on very small screens if it causes layout issues */
             .hero-arrow {
