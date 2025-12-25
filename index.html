@@ -4,12 +4,10 @@
     <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/f9f8fa613a9353b0e91062ead/a80e393553f67403fd7b6cff4.js");</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Autolett | Professional Newsletters in Minutes</title>
-  
-  <link rel="icon" type="image/png" href="/favicon.png">
-  
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-</head>
+    <title>Autolett | Professional Newsletters in Minutes</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
     <style>
         * {
             margin: 0;
@@ -29,27 +27,24 @@
             position: absolute;
             top: 0;
             width: 100%;
-            padding: 1.5rem 1rem;
+            padding: 1.5rem 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 100;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
         .logo img {
             height: 50px;
             width: auto;
+            display: block;
         }
 
-        @media (max-width: 968px) {
-            .logo img {
-                height: 40px;
-            }
+        .nav-links-container {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
         }
 
         .nav-cta {
@@ -62,7 +57,6 @@
             cursor: pointer;
             transition: all 0.3s;
             text-decoration: none;
-            display: inline-block;
         }
 
         .nav-cta:hover {
@@ -80,40 +74,24 @@
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.05) 50%, transparent 100%);
-            pointer-events: none;
-            z-index: 2; /* Existing overlay should be on top of the arrow but behind content */
-        }
-        
-        /* NEW: Style for the background arrow */
         .hero-arrow {
             position: absolute;
-            bottom: -5%; /* Adjusted for visual placement */
-            left: -10%; /* Starts outside the viewport slightly */
-            width: 97vw; /* Use a large width relative to viewport */
+            bottom: -5%;
+            left: -10%;
+            width: 97vw;
             height: auto;
             max-width: 1200px;
             pointer-events: none;
-            z-index: 1; /* Behind the content (z-index: 1) but above the background (no z-index/0) */
-            opacity: 0.7; /* Make it subtle */
-            transform: rotate(-5deg); /* Slight rotation for dynamic look */
+            z-index: 1;
+            opacity: 0.4;
+            transform: rotate(-5deg);
         }
-        /* End NEW Styles */
-
 
         .hero-content {
             max-width: 1200px;
             margin: 0 auto;
             position: relative;
-            z-index: 5; /* Ensure content is above the arrow and background effects */
+            z-index: 5;
         }
 
         .hero h1 {
@@ -123,7 +101,6 @@
             margin-bottom: 1rem;
             font-style: italic;
         }
-        /* ... rest of .hero styles ... */
 
         .hero-subtitle {
             font-size: 1.125rem;
@@ -155,25 +132,8 @@
 
         .hero-visual {
             margin-top: 3rem;
-            background: transparent;
-            border-radius: 12px 12px 0 0;
             box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .hero-visual img {
-            display: block;
-            border-radius: 12px 12px 0 0;
-        }
-
-        .dashboard-mockup {
-            background: #f5f7fa;
-            border-radius: 8px;
-            min-height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            font-size: 1.25rem;
+            border-radius: 12px;
         }
 
         /* Features Section */
@@ -181,7 +141,6 @@
             padding: 6rem 3rem;
             background: white;
         }
-        /* ... rest of the styles (Features, How It Works, FAQ, Waitlist, Footer, Responsive, Modal) ... */
 
         .section-title {
             text-align: center;
@@ -206,65 +165,34 @@
             align-items: center;
         }
 
-        .feature-row:nth-child(even) {
-            direction: rtl;
-        }
-
-        .feature-row:nth-child(even) > * {
-            direction: ltr;
-        }
-
-        .feature-visual-placeholder {
-            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
-            border-radius: 12px;
-            min-height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #6b7280;
-            font-weight: 600;
-        }
+        .feature-row:nth-child(even) { direction: rtl; }
+        .feature-row:nth-child(even) > * { direction: ltr; }
 
         .feature-content h3 {
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            color: #1a1a1a;
             font-style: italic;
         }
 
-        .feature-content p {
-            font-size: 1.125rem;
-            color: #4b5563;
-            line-height: 1.7;
-        }
-
-        /* How It Works Section */
+        /* How It Works */
         .how-it-works {
             background: linear-gradient(135deg, #2c4875 0%, #4a6fa5 100%);
             padding: 6rem 3rem;
             color: white;
+            text-align: center;
         }
 
-        .how-it-works .section-title {
-            color: white;
-            font-style: italic;
-        }
-
-        .steps-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        .how-it-works .section-title { color: white; }
 
         .steps {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
             margin-bottom: 3rem;
-        }
-
-        .step {
-            text-align: center;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .step-number {
@@ -281,565 +209,11 @@
             margin: 0 auto 1.5rem;
         }
 
-        .step h4 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-        }
+        /* FAQ */
+        .faq { padding: 6rem 3rem; background: #f9fafb; }
+        .faq-container { max-width: 900px; margin: 0 auto; }
+        .faq-item { background: white; padding: 2rem; margin-bottom: 1rem; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
 
-        .step p {
-            font-size: 0.95rem;
-            opacity: 0.9;
-            line-height: 1.5;
-        }
-
-        .how-it-works-cta {
-            text-align: center;
-        }
-
-        .how-it-works .btn-primary {
-            background: white;
-            color: #4a6fa5;
-        }
-
-        /* FAQ Section */
-        .faq {
-            padding: 6rem 3rem;
-            background: #f9fafb;
-        }
-
-        .faq-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: white;
-            padding: 2rem;
-            margin-bottom: 1rem;
-            border-radius: 12px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-        }
-
-        .faq-item h4 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: #1a1a1a;
-        }
-
-        .faq-item p {
-            color: #4b5563;
-            line-height: 1.6;
-        }
-
-        /* Waitlist Section */
+        /* Waitlist */
         .waitlist {
-            background: linear-gradient(135deg, #4a6fa5 0%, #5b7db8 100%);
-            padding: 6rem 3rem;
-            text-align: center;
-            color: white;
-        }
-
-        .waitlist-content {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .waitlist-badge {
-            display: inline-block;
-            padding: 0.5rem 1.5rem;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 25px;
-            font-size: 0.875rem;
-            margin-bottom: 1.5rem;
-            font-weight: 500;
-        }
-
-        .waitlist h2 {
-            font-size: 2.75rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            line-height: 1.2;
-        }
-
-        .waitlist .btn-primary {
-            font-size: 1.125rem;
-            padding: 1rem 2.5rem;
-        }
-
-        /* Footer */
-        footer {
-            background: #1f2937;
-            color: #9ca3af;
-            padding: 3rem 3rem 2rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .footer-logo img {
-            height: 45px;
-            width: auto;
-            filter: brightness(0) invert(1);
-        }
-
-        @media (max-width: 968px) {
-            .footer-logo img {
-                height: 36px;
-            }
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 2rem;
-            font-size: 0.875rem;
-        }
-
-        .footer-links a {
-            color: #9ca3af;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .footer-copyright {
-            text-align: right;
-            font-size: 0.875rem;
-        }
-
-        /* Updated Responsive Navigation */
-        @media (max-width: 968px) {
-            nav {
-                padding: 1rem 1.5rem; /* Less padding on sides */
-            }
-
-            .logo img {
-                height: 35px; /* Smaller logo to save space */
-            }
-
-            /* This targets the container holding Blog and the Button */
-            nav div[style*="margin-left: auto"] {
-                gap: 1rem !important; /* Reduce gap between Blog and Button */
-            }
-
-            .nav-cta {
-                padding: 0.5rem 1rem; /* Smaller button padding */
-                font-size: 0.85rem; /* Smaller font size */
-                white-space: nowrap; /* FORCES the button to stay on one line */
-            }
-
-            .hero {
-                padding: 6rem 2rem 3rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .feature-row {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .feature-row:nth-child(even) {
-                direction: ltr;
-            }
-
-            .steps {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-content {
-                flex-direction: column;
-                gap: 2rem;
-                text-align: center;
-            }
-
-            .footer-copyright {
-                text-align: center;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .waitlist h2 {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            nav {
-                padding: 1rem 1rem;
-            }
-            .nav-cta {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.75rem;
-            }
-            nav div[style*="margin-left: auto"] {
-                gap: 0.75rem !important;
-            }
-        }
-            
-            /* Hide the arrow on very small screens if it causes layout issues */
-            .hero-arrow {
-                display: none;
-            }
-        }
-
-        /* Modal Styles (from previous response) */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-        }
-
-        .modal-overlay.open {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal-content {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            position: relative;
-            max-width: 500px; 
-            width: 90%;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transform: scale(0.95);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .modal-overlay.open .modal-content {
-            transform: scale(1);
-        }
-
-        .close-button {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            background: none;
-            border: none;
-            font-size: 2rem;
-            cursor: pointer;
-            color: #1a1a1a;
-            line-height: 1;
-        }
-        
-        /* Mailchimp Form Overrides (Simplified) */
-        #mc_embed_signup {
-            background: #fff;
-            clear: left;
-            font: 14px Helvetica, Arial, sans-serif;
-            width: 100%; 
-        }
-        #mc_embed_signup .mc-field-group {
-            padding-bottom: 1.25rem;
-        }
-        #mc_embed_signup h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #4a6fa5;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-        #mc_embed_signup input[type="email"], 
-        #mc_embed_signup input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-        }
-        #mc_embed_signup .button {
-            display: block;
-            width: 100%;
-            padding: 0.875rem 2rem;
-            background: #4a6fa5; 
-            color: white;
-            border: none;
-            border-radius: 25px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 1rem;
-            text-shadow: none;
-        }
-        #mc_embed_signup .button:hover {
-            background: #2c4875;
-        }
-        #mc_embed_signup .clear.foot {
-            text-align: center;
-            margin-top: 1rem;
-        }
-    </style>
-    <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "uqp1vo74im");
-</script>
-</head>
-<body>
-<nav style="display: flex; align-items: center; padding: 1.5rem 3rem; position: absolute; top: 0; left: 0; width: 100%; box-sizing: border-box; z-index: 100;">
-    
-    <div class="logo" style="flex-shrink: 0;">
-        <a href="/"><img src="logo.png" alt="Autolett" style="height: 50px; width: auto; display: block;"></a>
-    </div>
-
-    <div class="nav-links-container" style="margin-left: auto; display: flex; align-items: center; gap: 1.5rem;">
-        <a href="/blog/" style="color: white; text-decoration: none; font-weight: 500; opacity: 0.9; font-size: 1rem;">Blog</a>
-        <a href="#" class="nav-cta open-modal" style="margin: 0;">Join the Waitlist</a>
-    </div>
-</nav>
-
-    <section class="hero">
-        <img src="arrow.png" alt="Abstract background arrow" class="hero-arrow">
-
-        <div class="hero-content">
-            <h1>Incredible Newsletters. Zero Grunt Work.</h1>
-            <p class="hero-subtitle">Stop wasting hours on formatting and copy-pasting. Autolett fetches your industry's best content so you can get back to your real job.</p>
-            <a href="#" class="btn-primary open-modal">Get Early Access</a>
-            
-            <div class="hero-visual">
-                <img src="dashboard.png" alt="Autolett Dashboard" style="width: 100%; height: auto; border-radius: 8px;">
-            </div>
-        </div>
-    </section>
-
-    <section class="features">
-        <h2 class="section-title">Everything You Need to Create Amazing<br>Newsletters</h2>
-        
-        <div class="feature-grid">
-            <div class="feature-row">
-                <img src="illustration-design.png" alt="Design Templates" style="width: 100%; height: auto; border-radius: 12px;">
-                <div class="feature-content">
-                    <h3>Any Article, Anywhere</h3>
-                    <p><strong>No RSS feed? No problem.</strong></p>
-                    <p>Copy any URL that publishes blogs or articles and paste into your Sources. Autolett finds the newest content automatically – no technical setup required.</p>
-                </div>
-            </div>
-
-            <div class="feature-row">
-                <img src="illustration-automation.png" alt="Automation" style="width: 100%; height: auto; border-radius: 12px;">
-                <div class="feature-content">
-                    <h3>True Automation</h3>
-                    <p>Our powerful automation engine works behind the scenes so you can focus on growing your audience instead of managing content.
-                    </p>
-                    <p>Set exactly when you want fetching to automatically take place, then choose how many articles from which sources. Choose which template to use, and whether to save it as a draft in your emailer or schedule to send it directly from within Autolett. Autolett handles the rest.</p>
-                </div>
-            </div>
-
-            <div class="feature-row">
-                <img src="illustration-curate.png" alt="Curate Content" style="width: 100%; height: auto; border-radius: 12px;">
-                <div class="feature-content">
-                    <h3>Designs That Convert</h3>
-                    <p>No more copy and pasting headlines, articles, publish dates, images, or links.</p>
-                    <p>Design multiple templates laid out however you want, and your fresh curated article list will be magically updated when you send your newsletter. It really is that easy.</p>
-                </div>
-            </div>
-
-            <div class="feature-row">
-                <img src="illustration-email.png" alt="Email Platform Integration" style="width: 100%; height: auto; border-radius: 12px;">
-                <div class="feature-content">
-                    <h3>Works With Your Email<br>Platform</h3>
-                    <p>Seamlessly integrates with Constant Contact, MailChimp, and MailerLite. Your newsletter appears as a draft or sends automatically—your choice.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="how-it-works">
-        <div class="steps-container">
-            <h2 class="section-title">From Setup to Send in Seconds</h2>
-            
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h4>Add Sources</h4>
-                    <p>Paste the URL of sites you want to curate from. No RSS needed!</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h4>Design Template</h4>
-                    <p>Customize your newsletter layout—or use one of our beautiful templates.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h4>Set Schedule</h4>
-                    <p>Choose when and how often to fetch articles. Complete control.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h4>Done</h4>
-                    <p>Autolett handles everything else automatically.</p>
-                </div>
-            </div>
-
-            <div class="how-it-works-cta">
-                <a href="#" class="btn-primary open-modal">Join The Waitlist</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="faq">
-        <div class="faq-container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            
-            <div class="faq-item">
-                <h4>Do I need RSS feeds?</h4>
-                <p>Nope! That's the whole point of Autolett. Just paste the URL of websites or content sites where blog posts are published and Autolett will scrape the rest.</p>
-            </div>
-
-            <div class="faq-item">
-                <h4>What happens if I run out of fetches?</h4>
-                <p>No worries! You can upgrade anytime or we can arrange to purchase more. We'll always warn you before you run out so you don't miss a send.</p>
-            </div>
-
-            <div class="faq-item">
-                <h4>Can I customize the email design?</h4>
-                <p>Absolutely. You have total control over everything—from templates, layouts, colors, fonts… EVERYTHING.</p>
-            </div>
-
-            <div class="faq-item">
-                <h4>What email platforms do you support?</h4>
-                <p>We currently support Constant Contact, MailChimp, and MailerLite. More coming soon!</p>
-            </div>
-
-            <div class="faq-item">
-                <h4>Can I manually curate articles before sending?</h4>
-                <p>Yes, absolutely! Autolett can do it all for you automatically in the background, or you can get as granular and manual as you want.</p>
-            </div>
-
-            <div class="faq-item">
-                <h4>Do you have refunds?</h4>
-                <p>Yes. We have a very straightforward 30-day money-back guarantee policy. If you aren't satisfied, no questions asked!</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="waitlist">
-        <div class="waitlist-content">
-            <div class="waitlist-badge">Launching soon!</div>
-            <h2>Join The Waitlist To Be Notified When Autolett Is Available</h2>
-            <a href="#" class="btn-primary open-modal">Join The Waitlist</a>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="logo.png" alt="Autolett">
-            </div>
-            
-            <div class="footer-links">
-                <a href="#">FAQ</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Get In Touch</a>
-            </div>
-            
-            <div class="footer-copyright">
-                © 2026 Autolett. All rights reserved.
-            </div>
-        </div>
-    </footer>
-
-    <div id="waitlistModal" class="modal-overlay">
-        <div class="modal-content">
-            <button class="close-button" id="closeModal">&times;</button>
-            <div id="mc_embed_shell">
-                <div id="mc_embed_signup">
-                    <form action="https://autolett.us9.list-manage.com/subscribe/post?u=f9f8fa613a9353b0e91062ead&amp;id=0ffe0a48b8&amp;f_id=001277e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-                        <div id="mc_embed_signup_scroll">
-                            <h2>Join the Waitlist</h2>
-                            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-                            <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""></div>
-                            <div class="mc-field-group"><label for="mce-FNAME">First Name </label><input type="text" name="FNAME" class=" text" id="mce-FNAME" value=""></div>
-                            <div class="mc-field-group"><label for="mce-LNAME">Last Name </label><input type="text" name="LNAME" class=" text" id="mce-LNAME" value=""></div>
-                            <div class="mc-field-group"><label for="mce-COMPANY">Company </label><input type="text" name="COMPANY" class=" text" id="mce-COMPANY" value=""></div>
-                            <div id="mce-responses" class="clear foot">
-                                <div class="response" id="mce-error-response" style="display: none;"></div>
-                                <div class="response" id="mce-success-response" style="display: none;"></div>
-                            </div>
-                            <div aria-hidden="true" style="position: absolute; left: -5000px;">
-                                <input type="text" name="b_f9f8fa613a9353b0e91062ead_0ffe0a48b8" tabindex="-1" value="">
-                            </div>
-                            <div class="optionalParent">
-                                <div class="clear foot">
-                                    <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Join Waitlist">
-                                    <p style="margin: 0px auto;"><a href="http://eepurl.com/juqRHM" title="Mailchimp - email marketing made easy and fun"><span style="display: inline-block; background-color: transparent; border-radius: 4px;"><img class="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp" style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-                    <script type="text/javascript">
-                        (function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[6]='COMPANY';ftypes[6]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);
-                    </script>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script>
-        const modal = document.getElementById('waitlistModal');
-        const openButtons = document.querySelectorAll('.open-modal');
-        const closeButton = document.getElementById('closeModal');
-
-        function openModal(event) {
-            event.preventDefault(); 
-            modal.classList.add('open');
-        }
-
-        function closeModal() {
-            modal.classList.remove('open');
-        }
-
-        openButtons.forEach(button => {
-            button.addEventListener('click', openModal);
-        });
-
-        closeButton.addEventListener('click', closeModal);
-
-        modal.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                closeModal();
-            }
-        });
-
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && modal.classList.contains('open')) {
-                closeModal();
-            }
-        });
-    </script>
-
-</body>
-</html>
+            background: linear-gradient(135deg, #4a6
