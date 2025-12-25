@@ -1,28 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/f9f8fa613a9353b0e91062ead/a80e393553f67403fd7b6cff4.js");</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Autolett | Professional Newsletters in Minutes</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/f9f8fa613a9353b0e91062ead/a80e393553f67403fd7b6cff4.js");</script>
 
+    <style>
+        /* RESET & BASE */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             color: #1a1a1a;
             line-height: 1.6;
-            overflow-x: hidden;
+            background-color: white;
         }
 
-        /* Navigation */
+        /* NAVIGATION */
         nav {
             position: absolute;
             top: 0;
@@ -33,187 +28,193 @@
             align-items: center;
             z-index: 100;
         }
-
-        .logo img {
-            height: 50px;
-            width: auto;
-            display: block;
-        }
-
-        .nav-links-container {
-            margin-left: auto;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
+        .logo img { height: 50px; width: auto; }
+        .nav-links { display: flex; align-items: center; gap: 2rem; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 500; }
         .nav-cta {
             padding: 0.6rem 1.5rem;
-            background: transparent;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.4);
             border-radius: 25px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
+            transition: 0.3s;
         }
+        .nav-cta:hover { background: rgba(255,255,255,0.1); }
 
-        .nav-cta:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.5);
-        }
-
-        /* Hero Section */
+        /* HERO */
         .hero {
-            background: linear-gradient(135deg, #4a6fa5 0%, #5b7db8 50%, #6b8fcf 100%);
-            padding: 8rem 3rem 4rem;
+            background: linear-gradient(135deg, #4a6fa5 0%, #6b8fcf 100%);
+            padding: 10rem 2rem 6rem;
             text-align: center;
             color: white;
             position: relative;
-            overflow: hidden;
         }
-
-        .hero-arrow {
-            position: absolute;
-            bottom: -5%;
-            left: -10%;
-            width: 97vw;
-            height: auto;
-            max-width: 1200px;
-            pointer-events: none;
-            z-index: 1;
-            opacity: 0.4;
-            transform: rotate(-5deg);
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 5;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            font-style: italic;
-        }
-
-        .hero-subtitle {
-            font-size: 1.125rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.95;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+        .hero-content { max-width: 800px; margin: 0 auto; position: relative; z-index: 10; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; font-style: italic; line-height: 1.1; }
+        .hero p { font-size: 1.25rem; margin-bottom: 2.5rem; opacity: 0.9; }
 
         .btn-primary {
-            padding: 0.875rem 5rem;
-            background: white;
-            color: #4a6fa5;
-            border: none;
-            border-radius: 25px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
             display: inline-block;
-            font-size: 1rem;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero-visual {
-            margin-top: 3rem;
-            box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.15);
-            border-radius: 12px;
-        }
-
-        /* Features Section */
-        .features {
-            padding: 6rem 3rem;
+            padding: 1rem 3rem;
             background: white;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 5rem;
-            color: #1a1a1a;
-            font-style: italic;
-        }
-
-        .feature-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            gap: 5rem;
-        }
-
-        .feature-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .feature-row:nth-child(even) { direction: rtl; }
-        .feature-row:nth-child(even) > * { direction: ltr; }
-
-        .feature-content h3 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            font-style: italic;
-        }
-
-        /* How It Works */
-        .how-it-works {
-            background: linear-gradient(135deg, #2c4875 0%, #4a6fa5 100%);
-            padding: 6rem 3rem;
-            color: white;
-            text-align: center;
-        }
-
-        .how-it-works .section-title { color: white; }
-
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-bottom: 3rem;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .step-number {
-            width: 70px;
-            height: 70px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            font-weight: 700;
             color: #4a6fa5;
-            margin: 0 auto 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+
+        /* FEATURES */
+        .features { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
+        .feature-row { 
+            display: flex; 
+            align-items: center; 
+            gap: 4rem; 
+            margin-bottom: 6rem;
+        }
+        .feature-row:nth-child(even) { flex-direction: row-reverse; }
+        .feature-image { flex: 1; }
+        .feature-image img { width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .feature-text { flex: 1; }
+        .feature-text h3 { font-size: 2rem; margin-bottom: 1rem; font-style: italic; }
+
+        /* FOOTER */
+        footer { background: #1f2937; color: white; padding: 4rem 2rem; text-align: center; }
+
+        /* MODAL STYLES (THE FIX) */
+        .modal-overlay {
+            display: none; /* Crucial: Hidden by default */
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(4px);
         }
 
-        /* FAQ */
-        .faq { padding: 6rem 3rem; background: #f9fafb; }
-        .faq-container { max-width: 900px; margin: 0 auto; }
-        .faq-item { background: white; padding: 2rem; margin-bottom: 1rem; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        /* This class is added via JS */
+        .modal-visible { display: flex !important; }
 
-        /* Waitlist */
-        .waitlist {
-            background: linear-gradient(135deg, #4a6
+        .modal-box {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            color: #333;
+        }
+
+        .close-x {
+            position: absolute;
+            top: 15px; right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            border: none; background: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .feature-row { flex-direction: column !important; gap: 2rem; }
+            nav { padding: 1rem; }
+            .nav-links a:first-child { display: none; } /* Hide Blog on mobile nav */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><img src="logo.png" alt="Autolett"></div>
+        <div class="nav-links">
+            <a href="/blog/">Blog</a>
+            <a href="#" class="nav-cta open-modal">Waitlist</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Elite Newsletters.<br>Zero Grunt Work.</h1>
+            <p>Autolett fetches your industry's best content automatically so you can get back to your real job.</p>
+            <a href="#" class="btn-primary open-modal">Join the Waitlist</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-row">
+            <div class="feature-image"><img src="illustration-design.png" alt="Sources"></div>
+            <div class="feature-text">
+                <h3>Any Article, Anywhere</h3>
+                <p>No RSS? No problem. Paste any URL and Autolett finds the newest content automatically. No technical setup required.</p>
+            </div>
+        </div>
+        <div class="feature-row">
+            <div class="feature-image"><img src="illustration-automation.png" alt="Automation"></div>
+            <div class="feature-text">
+                <h3>True Automation</h3>
+                <p>Choose your sources and your schedule. Autolett handles the fetching and formatting while you focus on strategy.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Autolett. All rights reserved.</p>
+    </footer>
+
+    <div id="waitlistModal" class="modal-overlay">
+        <div class="modal-box">
+            <button class="close-x" id="closeModal">&times;</button>
+            
+            <div id="mc_embed_signup">
+                <form action="https://autolett.us9.list-manage.com/subscribe/post?u=f9f8fa613a9353b0e91062ead&amp;id=0ffe0a48b8&amp;f_id=001277e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
+                    <h2 style="margin-bottom: 20px; color: #4a6fa5;">Join the Waitlist</h2>
+                    <div style="margin-bottom: 15px;">
+                        <label>Email Address *</label><br>
+                        <input type="email" name="EMAIL" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label>First Name</label><br>
+                        <input type="text" name="FNAME" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                    </div>
+                    <input type="submit" value="Get Early Access" style="width: 100%; padding: 12px; background: #4a6fa5; color: white; border: none; border-radius: 25px; font-weight: bold; cursor: pointer;">
+                </form>
+            </div>
+            </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('waitlistModal');
+        const openBtns = document.querySelectorAll('.open-modal');
+        const closeBtn = document.getElementById('closeModal');
+
+        // OPEN MODAL
+        openBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.classList.add('modal-visible');
+                document.body.style.overflow = 'hidden'; // Stop scroll
+            });
+        });
+
+        // CLOSE MODAL
+        const closeAction = () => {
+            modal.classList.remove('modal-visible');
+            document.body.style.overflow = 'auto'; // Restart scroll
+        };
+
+        closeBtn.addEventListener('click', closeAction);
+
+        // Close on background click
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) closeAction();
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeAction();
+        });
+    </script>
+
+</body>
+</html>
