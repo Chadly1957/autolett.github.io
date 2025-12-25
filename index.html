@@ -4,7 +4,12 @@
     <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/f9f8fa613a9353b0e91062ead/a80e393553f67403fd7b6cff4.js");</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autolett - Your Newsletter, on Autopilot</title>
+   <title>Autolett | Professional Newsletters in Minutes</title>
+  
+  <link rel="icon" type="image/png" href="/favicon.png">
+  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
     <style>
         * {
             margin: 0;
@@ -24,7 +29,7 @@
             position: absolute;
             top: 0;
             width: 100%;
-            padding: 1.5rem 3rem;
+            padding: 1.5rem 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -122,7 +127,7 @@
 
         .hero-subtitle {
             font-size: 1.125rem;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             opacity: 0.95;
             max-width: 600px;
             margin-left: auto;
@@ -130,7 +135,7 @@
         }
 
         .btn-primary {
-            padding: 0.875rem 2rem;
+            padding: 0.875rem 5rem;
             background: white;
             color: #4a6fa5;
             border: none;
@@ -416,10 +421,25 @@
             font-size: 0.875rem;
         }
 
-        /* Responsive */
+        /* Updated Responsive Navigation */
         @media (max-width: 968px) {
             nav {
-                padding: 1.5rem 2rem;
+                padding: 1rem 1.5rem; /* Less padding on sides */
+            }
+
+            .logo img {
+                height: 35px; /* Smaller logo to save space */
+            }
+
+            /* This targets the container holding Blog and the Button */
+            nav div[style*="margin-left: auto"] {
+                gap: 1rem !important; /* Reduce gap between Blog and Button */
+            }
+
+            .nav-cta {
+                padding: 0.5rem 1rem; /* Smaller button padding */
+                font-size: 0.85rem; /* Smaller font size */
+                white-space: nowrap; /* FORCES the button to stay on one line */
             }
 
             .hero {
@@ -462,15 +482,18 @@
             }
         }
 
-        @media (max-width: 640px) {
-            .steps {
-                grid-template-columns: 1fr;
+        @media (max-width: 480px) {
+            nav {
+                padding: 1rem 1rem;
             }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 1rem;
+            .nav-cta {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.75rem;
             }
+            nav div[style*="margin-left: auto"] {
+                gap: 0.75rem !important;
+            }
+        }
             
             /* Hide the arrow on very small screens if it causes layout issues */
             .hero-arrow {
@@ -574,6 +597,13 @@
             margin-top: 1rem;
         }
     </style>
+    <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uqp1vo74im");
+</script>
 </head>
 <body>
 <nav style="display: flex; align-items: center; padding: 1.5rem 3rem; position: absolute; top: 0; left: 0; width: 100%; box-sizing: border-box; z-index: 100;">
@@ -582,7 +612,7 @@
         <a href="/"><img src="logo.png" alt="Autolett" style="height: 50px; width: auto; display: block;"></a>
     </div>
 
-    <div style="margin-left: auto; display: flex; align-items: center; gap: 2.5rem;">
+    <div class="nav-links-container" style="margin-left: auto; display: flex; align-items: center; gap: 1.5rem;">
         <a href="/blog/" style="color: white; text-decoration: none; font-weight: 500; opacity: 0.9; font-size: 1rem;">Blog</a>
         <a href="#" class="nav-cta open-modal" style="margin: 0;">Join the Waitlist</a>
     </div>
@@ -592,8 +622,8 @@
         <img src="arrow.png" alt="Abstract background arrow" class="hero-arrow">
 
         <div class="hero-content">
-            <h1>Your Newsletter, on<br>Autopilot.</h1>
-            <p class="hero-subtitle">Beautiful, curated newsletters from any website—no RSS required. Add sources. Design once. Send forever. Get early access to Autolett by joining the waitlist, today!</p>
+            <h1>Incredible Newsletters. Zero Grunt Work.</h1>
+            <p class="hero-subtitle">Stop wasting hours on formatting and copy-pasting. Autolett fetches your industry's best content so you can get back to your real job.</p>
             <a href="#" class="btn-primary open-modal">Get Early Access</a>
             
             <div class="hero-visual">
